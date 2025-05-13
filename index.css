@@ -1,70 +1,79 @@
-*{
-    box-sizing: border-box;
+*, *::before, *::after {
+    box-sizing: border-box;    
 }
 
-body {
-    font-family: "Inter", sans-serif;
-    max-width: 550px;
-    margin: 0 auto;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+main{
+    height: 550px;
+    background-color: white;
+    width: 550px;
+    margin: 50px auto;
 }
 
 .top-section{
-   width: 100%;
-   background-color: #1F2937;
-   padding: 1em 0.875em;
-   display: flex;
-   gap: .75em;
-   justify-content: space-between;
-   align-items: center;
-}
-
-.color-picker{
-    width: 60px;
-    height: 40px;
-}
-
-select{
-    width: 300px;
-    background-color: #1F293A;
-    color: #D1D5DB;
-    border: 1px solid #D1D5DB;
-    border-radius: 6px;
-    padding: 10px;
-
-}
-
-#find-scheme-btn{
-    font-size: .75rem;
-    padding: 1.1em 1em;
-    background-color: #3D4B60;
-    color: #FFFFFF;
-    border: none;
-    box-shadow: 0px 1px 2px 0px #0000000D;
-
-}
-
-.color-section{
-    width: 100%;
-    max-width: 550px;
-    margin: 0 auto;
-    display: grid;
-    grid-template: auto auto / repeat(5, auto);
-}
-
-.color{
-    height: 300px;
-}
-
-.color-code{
-    background-color: #1F2937;
-    color: #D5D4D8;
-    padding: 1em 0;
-    margin: 0;
+    height: 90px;
+    padding: 15px 25px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: .75rem;
+    gap: 13px;
+    justify-content: space-between;
 }
+
+.color-selector, 
+.color-scheme,
+.btn{
+    height: 42px;
+}
+
+.color-selector{
+    width: 61px;
+}
+
+.color-scheme{
+    border-radius: 6px;
+    padding-left: 13px;
+    width: 312px;
+}
+
+.btn{
+    white-space: nowrap;
+    border-radius: 4px;    
+}
+
+.color-scheme, .btn{
+    border: 1px solid gray;
+    box-shadow: 0px 1px 2px 0px #0000000D;
+    background-color: white;
+}
+
+.bottom-section{
+    height: 460px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+}
+
+.color-container{
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr auto;    
+}
+
+.color-container > p{
+   padding: 12px 0;
+   margin: 0;
+} 
+
+
+
+
+
 
 
 

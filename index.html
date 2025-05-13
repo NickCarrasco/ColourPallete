@@ -1,49 +1,50 @@
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <div class="top-section">
-            <input id="color-picker" type="color" value="#FFFFF"/>
-            <select id="color-scheme">
-                <option value="monochrome" selected>Monochrome</option>
-                <option value="monochrome-dark">Monochrome-dark</option>
-                <option value="monochrome-light">Monochrome-light</option>
-                <option value="analogic">Analogic</option>
-                <option value="complement">Complement</option>
-                <option value="analogic-complement">Analogic-complement</option>
-                <option value="triad">Triad</option>
-                <option value="quad">Quad</option>            
-            </select>
-            <button id="find-scheme-btn">Get color scheme</button>
-        </div>
-        <div class="color-section">
-            <div>
-                <div class="color" id="color-1"></div>
-                <p class="color-code" id="color-code-1"></p>
+        <main>
+            <div class="top-section">
+                <input class="color-selector" type='color'/>
+                <select class="color-scheme">
+                    <option value="monochrome">Monochrome</option>
+                    <option value="monochrome-dark">Monochrome-dark</option>
+                    <option value="monochrome-light">Monochrome-light</option>
+                    <option value="analogic">Analogic</option>
+                    <option value="complement">Complement</option>
+                    <option value="analogic-complement">Analogic-complement</option>
+                    <option value="triad">Triad</option>
+                </select>
+                <button class="btn">Get color scheme</button>
             </div>
-            <div>
-                <div class="color" id="color-2"></div>
-                <p class="color-code" id="color-code-2"></p>
-            </div>
-            <div>
-                <div class="color" id="color-3"></div>
-                <p class="color-code" id="color-code-3"></p>
-            </div>
-            <div>
-                <div class="color" id="color-4"></div>
-                <p class="color-code" id="color-code-4"></p>
-            </div>
-            <div>
-                <div class="color" id="color-5"></div>
-                <p class="color-code" id="color-code-5"></p>
-            </div>
-        </div>
+            
+            <div class="bottom-section">
+                <div class="color-container">
+                    <div class="color"></div>
+                    <p></p>
+                </div>
+    
+                <div class="color-container">
+                    <div class="color"></div>
+                    <p></p>
+                </div>
+                
+                <div class="color-container">
+                    <div class="color"></div>
+                    <p></p>
+                </div>
+                
+                <div class="color-container">
+                    <div class="color"></div>
+                    <p></p>
+                </div>
+                
+                <div class="color-container">
+                    <div class="color"></div>
+                    <p></p>
+                </div>
+            </div>  
+        </main>
         <script src="index.js"></script>
     </body>
 </html>

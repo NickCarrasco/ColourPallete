@@ -1,38 +1,39 @@
-const colorPicker = document.getElementById("color-picker")
-const colorSchemePicker = document.getElementById("color-scheme")
-const btn = document.getElementById("find-scheme-btn")
+const colorSelector = document.querySelector(".color-selector")
+const btn = document.querySelector(".btn")
+const scheme = document.querySelector('.color-scheme')
 
-const colorCodes = []
-const colorElements = []
-for(let i = 0; i < 5; i++){
-    colorElements.push(document.getElementById(`color-${i+1}`))
-    colorCodes.push(document.getElementById(`color-code-${i+1}`))
-}
+let color = colorSelector.value
+let colorSchemeArray = []
 
-let colorScheme
-let chosenColor
+getScheme()
 
-generateScheme()
+colorSelector.addEventListener('change', (e)=>{
+    color = e.target.value
+})
 
-function generateScheme(){
-    colorScheme = colorSchemePicker.value
-    chosenColor = colorPicker.value
-    fetch(`https://www.thecolorapi.com/scheme?hex=${chosenColor.slice(1)}&mode=${colorScheme}&count=4`)
-        .then(res => res.json())
-        .then(data => assignColors(data.colors))
-}
+btn.addEventListener("click", ()=>{
+  getScheme()
+})
 
-function assignColors(colors){ 
-    colorCodes[0].textContent = chosenColor.toUpperCase()
-    colorElements[0].style.backgroundColor = chosenColor 
-     
-    for(let i = 0; i < colors.length; i++){
-        colorCodes[i+1].textContent = colors[i].hex.value
-        colorElements[i+1].style.backgroundColor = colors[i].hex.value
-    }
-}
-
-btn.addEventListener('click', ()=> generateScheme())
-
-
+function getScheme(){
+    fetch(`https://www.thecolorapi.com/scheme?hex=${color.slice(1)}&mode=${scheme.value}&count=4`)
+    .then(res => res.json())
+    .then(data => {
+        colorSchemeArray = data.colors.map(color => color.hex.value)
+        colorSchemeArray.unshift(color)
+        assignColors()
     
+    })
+}
+
+function assignColors(){
+      const bottomSectionChildren = document.querySelector(".bottom-section").children
+      
+    
+      colorSchemeArray.forEach((color, index) => {
+        const grandChildren = bottomSectionChildren[index].children
+        grandChildren[0].style.backgroundColor = color
+        grandChildren[1].textContent = color.toUpperCase()
+      })
+ 
+}

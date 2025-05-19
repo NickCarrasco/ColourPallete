@@ -65,8 +65,10 @@ main{
     grid-template-rows: 1fr auto;    
 }
 
+
 .color-container > p{
    padding: 12px 0;
+
    margin: 0;
 } 
 

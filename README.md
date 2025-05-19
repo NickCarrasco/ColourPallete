@@ -13,7 +13,7 @@ Solo project from the working with APIs course on [Scrimba](https://scrimba.com/
 - Clicking button mkaes request to Color API to get a colour scheme
 - Display the scheme colors and hex values on the page
 
-## Eperience Gained
+## Experience Gained
 
 - Built a web app that generates colour palettes using user-input base colours and the Color API
 - Integrated RESTful API calls with `fetch()` to retrieve and display dynamic colour schemes

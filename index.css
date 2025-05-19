@@ -62,10 +62,13 @@ main{
 
 .color-container{
     text-align: center;
-    display: grid;
-    grid-template-rows: 1fr auto;    
+    display: flex;
+    flex-direction: column;    
 }
 
+.color{
+    flex-grow: 1;
+}
 
 .color-container > p{
    padding: 12px 0;

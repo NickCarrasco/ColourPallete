@@ -15,15 +15,14 @@ btn.addEventListener("click", ()=>{
   getScheme()
 })
 
-function getScheme(){
-    fetch(`https://www.thecolorapi.com/scheme?hex=${color.slice(1)}&mode=${scheme.value}&count=4`)
-    .then(res => res.json())
-    .then(data => {
-        colorSchemeArray = data.colors.map(color => color.hex.value)
-        colorSchemeArray.unshift(color)
-        assignColors()
+async function getScheme(){
+  const res = await fetch(`https://www.thecolorapi.com/scheme?hex=${color.slice(1)}&mode=${scheme.value}&count=4`)
+  const data = await res.json() 
+  colorSchemeArray = data.colors.map(color => color.hex.value)
+  colorSchemeArray.unshift(color)
+  assignColors()
     
-    })
+ 
 }
 
 function assignColors(){

@@ -4,6 +4,8 @@ Solo project from the working with APIs course on [Scrimba](https://scrimba.com/
 
 ## Link
 
+[Project Url](https://shiny-jalebi-43986d.netlify.app) (hosted on Netlify)
+
 ## Project Requirements
 
 - Choose "seed colour" with an `<input type="color" />`
